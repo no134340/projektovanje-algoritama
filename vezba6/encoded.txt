@@ -1,0 +1,15 @@
+Input: ab
+Encoded: 10
+
+Input: ababababab
+Encoded: 1010101010
+
+Input: aabbbcccc
+Encoded: 10101111110000
+
+Input: aabbbccccddddd
+Encoded: 0000010101101010101111111111
+
+Input: aaabbbbcccccddddddeef
+Encoded: 101101101000000000101010101111111111111100110011000
+

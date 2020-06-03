@@ -1,0 +1,15 @@
+1.	Funkcija LCS (rekurzivna implementacija) ima vremensku slozenost O(2^(n+m)).
+	U svakom pozivu funkcije, trazicemo resenje manjeg problema u zavisnosti poklapanja karaktera.
+	Ukoliko dolazi do poklapanja odgovarajucih karaktera, trazimo resenje problema
+	gde su oba niza smanjena za taj 1 karakter.
+	Ukoliko se karakteri ne poklapaju, potrebno je traziti max resenja 2 problema, 
+	u jednom je samo 1. niz smanjen za 1 karakter, a u drugom je samo 2. niz smanjen za 1 karakter.
+	Ovaj 2. slucaj kada se karakteri ne poklapaju je vremenski skuplji sto se tice vremena izvrsavanja 
+	(moraju se obraditi 2 potproblema, za razliku od 1 potproblema, kada se karakteri poklapaju).
+	Pri ovim rekurzivnim pozivima moze se desiti da nema uopste poklapanja (ili da ih ima jako malo),
+	te ce se mnogo cesce izvrsavati slucaj kada se karakteri ne poklapaju. Takodje, doci ce do resavanja
+	istih manjih potproblema vise puta.
+	
+2.	Funkcija LCS_length (implementacija upotrebom dinamickog programiranja) ima slozenost O(n*m),
+	zato sto se za svaki od n karaktera iz prvog niza, proverava poklapanje sa svakim od m karaktera
+	iz drugog niza.

@@ -1,0 +1,57 @@
+****************************************************************
+
+Quadratic probing, h2 as helper:
+
+n = 10000, p = 500, m = 10000, mp = 9999
+****************************************************************
+
+Quadratic probing, h2 as helper:
+
+n = 10000, p = 500, m = 10000, mp = 9999
+Time to insert: 12.073087692260742
+Time to search for random element: 1.1444091796875e-05
+
+n = 10000, p = 500, m = 5000, mp = 4999
+****************************************************************
+
+Quadratic probing, h2 as helper:
+
+n = 10000, p = 500, m = 10000, mp = 9999
+Time to insert: 0.546128511428833
+Time to search for random element: 1.3828277587890625e-05
+
+n = 10000, p = 500, m = 5000, mp = 4999
+Time to insert: 0.2697000503540039
+Time to search for random element: 3.695487976074219e-05
+
+n = 10000, p = 500, m = 2500, mp = 2499
+Time to insert: 0.24451208114624023
+Time to search for random element: 1.0013580322265625e-05
+
+
+n = 50000, p = 1000, m = 50000, mp = 49999
+Time to insert: 1.1708416938781738
+Time to search for random element: 3.170967102050781e-05
+
+n = 50000, p = 1000, m = 25000, mp = 24999
+Time to insert: 1.1734669208526611
+Time to search for random element: 3.2901763916015625e-05
+
+n = 50000, p = 1000, m = 12500, mp = 12499
+Time to insert: 1.197951078414917
+Time to search for random element: 3.218650817871094e-05
+
+
+n = 100000, p = 10000, m = 100000, mp = 99999
+Time to insert: 2.581733226776123
+Time to search for random element: 3.3855438232421875e-05
+
+n = 100000, p = 10000, m = 50000, mp = 49999
+Time to insert: 2.5680549144744873
+Time to search for random element: 3.4332275390625e-05
+
+n = 100000, p = 10000, m = 25000, mp = 24999
+Time to insert: 2.719395399093628
+Time to search for random element: 3.62396240234375e-05
+
+

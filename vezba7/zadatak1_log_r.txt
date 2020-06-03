@@ -1,0 +1,122 @@
+****************************************************************
+
+Division method:
+
+n = 10000, p = 23, m = 23
+Time to insert: 0.015414953231811523
+Time to search for random element: 1.9550323486328125e-05
+
+n = 10000, p = 23, m = 11
+Time to insert: 0.01590752601623535
+Time to search for random element: 1.621246337890625e-05
+
+n = 10000, p = 23, m = 5
+Time to insert: 0.015210390090942383
+Time to search for random element: 1.7404556274414062e-05
+
+n = 50000, p = 9973, m = 9973
+Time to insert: 0.16315865516662598
+Time to search for random element: 1.1682510375976562e-05
+
+n = 50000, p = 9973, m = 4986
+Time to insert: 0.10007429122924805
+Time to search for random element: 1.0251998901367188e-05
+
+n = 50000, p = 9973, m = 2493
+Time to insert: 0.09866905212402344
+Time to search for random element: 1.049041748046875e-05
+
+n = 100000, p = 99991, m = 99991
+Time to insert: 0.17612910270690918
+Time to search for random element: 1.0967254638671875e-05
+
+n = 100000, p = 99991, m = 49995
+Time to insert: 0.2901921272277832
+Time to search for random element: 1.0251998901367188e-05
+
+n = 100000, p = 99991, m = 24997
+Time to insert: 0.35352468490600586
+Time to search for random element: 1.1682510375976562e-05
+
+****************************************************************
+
+Multiplication method:
+
+n = 10000, p = 23, m = 23
+Time to insert: 0.021151304244995117
+Time to search for random element: 1.2159347534179688e-05
+
+n = 10000, p = 23, m = 11
+Time to insert: 0.026245832443237305
+Time to search for random element: 1.7881393432617188e-05
+
+n = 10000, p = 23, m = 5
+Time to insert: 0.023297548294067383
+Time to search for random element: 2.384185791015625e-05
+
+n = 50000, p = 9973, m = 9973
+Time to insert: 0.15704751014709473
+Time to search for random element: 1.2636184692382812e-05
+
+n = 50000, p = 9973, m = 4986
+Time to insert: 0.13703298568725586
+Time to search for random element: 1.1444091796875e-05
+
+n = 50000, p = 9973, m = 2493
+Time to insert: 0.14142417907714844
+Time to search for random element: 1.0967254638671875e-05
+
+n = 100000, p = 99991, m = 99991
+Time to insert: 0.2383878231048584
+Time to search for random element: 1.0967254638671875e-05
+
+n = 100000, p = 99991, m = 49995
+Time to insert: 0.3677096366882324
+Time to search for random element: 1.0728836059570312e-05
+
+n = 100000, p = 99991, m = 24997
+Time to insert: 0.38228392601013184
+Time to search for random element: 9.775161743164062e-06
+
+****************************************************************
+
+Universal hashing:
+
+n = 10000, p = 23, m = 23
+Time to insert: 0.008334875106811523
+Time to search for random element: 5.7220458984375e-06
+
+n = 10000, p = 23, m = 11
+Time to insert: 0.008803606033325195
+Time to search for random element: 9.059906005859375e-06
+
+n = 10000, p = 23, m = 5
+Time to insert: 0.008198022842407227
+Time to search for random element: 5.4836273193359375e-06
+
+n = 50000, p = 9973, m = 9973
+Time to insert: 0.13379716873168945
+Time to search for random element: 1.1205673217773438e-05
+
+n = 50000, p = 9973, m = 4986
+Time to insert: 0.14863157272338867
+Time to search for random element: 1.1205673217773438e-05
+
+n = 50000, p = 9973, m = 2493
+Time to insert: 0.15259432792663574
+Time to search for random element: 1.049041748046875e-05
+
+n = 100000, p = 99991, m = 99991
+Time to insert: 0.15947771072387695
+Time to search for random element: 1.049041748046875e-05
+
+n = 100000, p = 99991, m = 49995
+Time to insert: 0.6161396503448486
+Time to search for random element: 1.049041748046875e-05
+
+n = 100000, p = 99991, m = 24997
+Time to insert: 0.6642141342163086
+Time to search for random element: 9.5367431640625e-06
+
+****************************************************************
+
