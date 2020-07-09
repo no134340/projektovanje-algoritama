@@ -22,9 +22,11 @@ class Vertex:
     def __repr__(self):
         return self.name
 
+    # hash function is needed for vertex storage in sets
     def __hash__(self):
         return hash(self.name)
 
+    # comparison functions needed for vertex storage in a min heap based on the distance/smallest edge weight
     def __lt__(self, other):
         return self.d < other.d
 
@@ -54,15 +56,27 @@ def find_set(set_list, vertex):
 
 class Graph:
 
-    def __init__(self):
+    def __init__(self, undirected=False):
+        # is the graph directed?
+        self.undirected = undirected
+        # vertices dictionary
         self.v = {}
-        self.adj_matrix = None
+        # number of vertices
         self.n = 0
+        # list of all edges in the graph
         self.edge_list = None
+        # adjacency matrix
+        self.adj_matrix = None
+        # adjacency list
         self.adj_list = None
+        # dictionary storing vertex_name : corresponding_index of each vertex
+        # for easier indexing of adjacency list
         self.indices = {}
+        # for DFS
         self.time = 0
+        # list of vertices in order they were finished by DFS
         self.finished = []
+        # list of components in the grap
         self.components = []
 
     def set_edge_list(self, edges):
@@ -74,16 +88,16 @@ class Graph:
             self.n += 1
             self.indices[vtx.index] = vtx.name
 
-    def make_adj_matrix(self, undirected=False):
+    def make_adj_matrix(self):
         edges = self.edge_list
         n = self.n
         self.adj_matrix = [0] * (n ** 2)
         for edge in edges:
             self.adj_matrix[self.v[edge.first].index * n + self.v[edge.second].index] = edge.w
-            if undirected:
+            if self.undirected:
                 self.adj_matrix[self.v[edge.second].index * n + self.v[edge.first].index] = edge.w
 
-    def make_adj_list(self, undirected=False):
+    def make_adj_list(self):
         adj_list = []
         for i in range(self.n):
             adj_list.append([])
@@ -91,9 +105,27 @@ class Graph:
             first = self.v[edge.first]
             second = self.v[edge.second]
             adj_list[first.index].append([second, edge.w])
-            if undirected:
+            if self.undirected:
                 adj_list[second.index].append([first, edge.w])
         self.adj_list = adj_list
+
+    def transpose(self):
+        transposed = Graph()
+        transposed.n = self.n
+        transposed.undirected = self.undirected
+
+        for name, vertex in self.v.items():
+            transposed.v[name] = Vertex(name, vertex.index)
+            transposed.indices[vertex.index] = name
+
+        edge_list = []
+        for edge in self.edge_list:
+            edge_list.append(Edge(edge.second, edge.first, edge.w))
+        transposed.set_edge_list(edge_list)
+        transposed.make_adj_list()
+        transposed.make_adj_matrix()
+
+        return transposed
 
     def DFS_visit(self, u, comp=False, comp_list=None):
         if comp:
@@ -173,23 +205,6 @@ class Graph:
                 temp.remove(src_set)
                 temp.append(u_set)
         return A
-
-    def transpose(self):
-        transposed = Graph()
-        transposed.n = self.n
-
-        for name, vertex in self.v.items():
-            transposed.v[name] = Vertex(name, vertex.index)
-            transposed.indices[vertex.index] = name
-
-        edge_list = []
-        for edge in self.edge_list:
-            edge_list.append(Edge(edge.second, edge.first, edge.w))
-        transposed.set_edge_list(edge_list)
-        transposed.make_adj_list(undirected=False)
-        transposed.make_adj_matrix()
-
-        return transposed
 
     def print_adj_list(self):
         for i, lst in enumerate(self.adj_list):

@@ -4,8 +4,8 @@ from graph import Vertex, VertexColor, Graph, Edge
 def find_strongly_connected_components(graph):
     graph.DFS()
     transposed = graph.transpose()
-
     transposed.DFS_component(graph.finished)
+
     print("Strongly connected components in the graph:")
     for comp_list in transposed.components:
         print(f"{comp_list}")
@@ -15,7 +15,8 @@ def find_strongly_connected_components(graph):
 if __name__ == '__main__':
     vertices = ["a", "b", "c", "d", "e", "f", "g", "h"]
 
-    g = Graph()
+    g = Graph(undirected=False)
+    # g = Graph(undirected=True)
 
     for i, name in enumerate(vertices):
         g.add_vertex(Vertex(name, i))
@@ -36,23 +37,22 @@ if __name__ == '__main__':
              Edge("h", "h", 10)]
 
     g.set_edge_list(edges)
-    g.make_adj_matrix(False)
+    g.make_adj_matrix()
     g.print_adj_matrix()
 
-    g.make_adj_list(False)
+    g.make_adj_list()
     g.print_adj_list()
     print()
 
     find_strongly_connected_components(g)
 
     # za Prim i Kruskala staviti da je graf neusmeren
-    # tj. kada se prave adj list i matrix staviti True
 
     # # MST Prim
     # print("\nMST - Prim:")
     # mst = g.mst_prim(g.v['a'])
     # print(mst)
-    #
+
     # # MST Kruskal
     # print("\nMST - Kruskal:")
     # mst = g.mst_kruskal()
